@@ -23,28 +23,30 @@
 
 <Definition>
   <Loop name="852BNC" comment="X12.852, the Product Activity Data document, is a message format standard used by retailers to transmit point of sale data to suppliers via electronic data interchange. These files instruct a supplier on the units sold and units on hand at a store and item level. X12.852 files are typically provided on a daily or weekly basis. These files are usually referred to as product activity data. The Data Interchange Standards Association provides detailed specifications for EDI documents and helps to control international standards.">
-    <Segment name="ISA" max="1" required="y" comment="File header"/>
-      <Segment name="GS" max="1" required="y" comment="Store header"/>
+    <Segment name="ISA" min="1" max="1" required="y" comment="File header"/>
+      <Segment name="GS" min="1" max="1" required="y" comment="Store header"/>
         <Loop name="L852" max="inf" comment="Transaction Envelope">
-          <Segment name="ST" max="1" required="y" comment="Transaction header"/>
-            <Segment name="XQ" max="1" required="y" comment="Date, Transaction#"/>
-            <Segment name="XPO" max="1" required="y" comment="Web order#"/>
+          <Segment name="ST" min="1" max="1" required="y" comment="Transaction header"/>
+            <Segment name="XQ" min="1" max="1" required="y" comment="Date, Transaction#"/>
+            <Segment name="XPO" min="1" max="1" required="y" comment="Web order#"/>
             <Loop name="LTENDER" max="inf" comment="Tender multiple occurrence">
               <Segment name="N9*AFK" max="1" required="y" comment="Tender"/>
             </Loop>
-            <Segment name="N9*AFJ*TAX" max="1" required="y" comment="Tax"/>
+            <Loop name="LTAX" max="1" comment="Tender multiple occurrence">
+              <Segment name="N9" max="1" required="y" comment="Tender"/>
+            </Loop>
             <Segment name="PER" max="1" required="y" comment="Register, employee#"/>
-            <Segment name="N1" max="1" required="y" comment="Web customer name"/>
-            <Segment name="N3" max="1" required="y" comment="Web customer street addr"/>
-            <Segment name="N4" max="1" required="y" comment="Web customer city addr"/>
+            <Segment name="N1"  max="1" required="y" comment="Web customer name"/>
+            <Segment name="N3"  max="1" required="y" comment="Web customer street addr"/>
+            <Segment name="N4"  max="1" required="y" comment="Web customer city addr"/>
             <Segment name="TD5" max="1" required="y" comment="Shipping amount"/>
             <Segment name="DTM" max="1" required="y" comment="Transaction date,time"/>
-            <Segment name="N9*4D" max="1" required="y" comment="Shipto name, addr"/>
+            <Segment name="N9"  max="1" required="y" comment="Shipto name, addr"/>
 
             <Loop name="LMENCHINFO" max="inf" comment="Merchandise information multiple occurrences">
               <Segment name="LIN" max="1" required="y" comment="Item identification"/>
               <Segment name="CTP" max="1" required="y" comment="Unit pricing"/>
-              <Segment name="N9*DBK" max="1" required="y" comment="UDT information"/>
+              <Segment name="N9"  max="1" required="y" comment="UDT information"/>
               <Segment name="AMT" max="1" required="y" comment="Extenden pricing"/>
               <Segment name="SAC" max="1" required="y" comment="Discount"/>
               <Segment name="DTM" max="1" required="y" comment="Date"/>

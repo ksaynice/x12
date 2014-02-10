@@ -2,8 +2,8 @@
    This file is part of the X12Parser library that provides tools to
    manipulate X12 messages using Ruby native syntax.
 
-   http://x12parser.rubyforge.org 
-   
+   http://x12parser.rubyforge.org
+
    Copyright (C) 2009 APP Design, Inc.
 
    This library is free software; you can redistribute it and/or
@@ -24,19 +24,19 @@
 -->
 
 <Segment name="TD5" comment="To specify the carrier and sequence of routing and provide transit time information">
-  <Field name="RoutingSequenceCode" required="y" min="1" max="2" validation="T133" comment="Code describing the relationship of a carrier to a specific shipment movement"/>
+  <Field name="RoutingSequenceCode" required="n" min="1" max="2" validation="T133" comment="Code describing the relationship of a carrier to a specific shipment movement"/>
   <Field name="IdentificationCodeQualifier" required="y" min="1" max="2" validation="T66" comment="Code designating the system/method of code structure used for Identification Code (67)"/>
   <Field name="IdentificationCode" required="y" min="2" max="80" comment="Code identifying a party or other code"/>
   <Field name="TransportationMethodTypeCode" required="y" min="1" max="2" validation="T91" comment="Code specifying the method or type of transportation for the shipment"/>
   <Field name="Routing" required="y" min="1" max="35" comment="Free-form description of the routing or requested routing for shipment, or the originating carrier's identity"/>
-  <Field name="ShipmentOrderStatusCode" required="y" min="2" max="2" validation="T368" comment="Code indicating the status of an order or shipment or the disposition of any difference between the quantity ordered and the quantity shipped for a line item or transaction"/>
-  <Field name="LocationQualifier" required="y" min="1" max="2" validation="T309" comment="Code identifying type of location"/>
+  <Field name="ShipmentOrderStatusCode" required="n" min="2" max="2" validation="T368" comment="Code indicating the status of an order or shipment or the disposition of any difference between the quantity ordered and the quantity shipped for a line item or transaction"/>
+  <Field name="LocationQualifier" required="n" min="1" max="2" validation="T309" comment="Code identifying type of location"/>
   <Field name="LocationIdentifier" required="y" min="1" max="30" comment="Code which identifies a specific location"/>
-  <Field name="TransitDirectionCode" required="y" min="2" max="2" validation="T731" comment="The point of origin and point of direction"/>
-  <Field name="TransitTimeDirectionQualifier" required="y" min="2" max="2" validation="T732" comment="Code specifying the value of time used to measure the transit time"/>
-  <Field name="TransitTime" type="double" required="y" min="1" max="4" comment="The numeric amount of transit time"/>
-  <Field name="ServiceLevelCode1" required="y" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
-  <Field name="ServiceLevelCode2" required="y" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
-  <Field name="ServiceLevelCode3" required="y" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
-  <Field name="CountryCode" required="y" min="2" max="3" comment="Code identifying the country"/>
+  <Field name="TransitDirectionCode" required="n" min="2" max="2" validation="T731" comment="The point of origin and point of direction"/>
+  <Field name="TransitTimeDirectionQualifier" required="n" min="2" max="2" validation="T732" comment="Code specifying the value of time used to measure the transit time"/>
+  <Field name="TransitTime" type="double" required="n" min="1" max="4" comment="The numeric amount of transit time"/>
+  <Field name="ServiceLevelCode1" required="n" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
+  <Field name="ServiceLevelCode2" required="n" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
+  <Field name="ServiceLevelCode3" required="n" min="2" max="2" validation="T284" comment="Code indicating the level of transportation service or the billing service offered by the transportation carrier"/>
+  <Field name="CountryCode" required="n" min="2" max="3" comment="Code identifying the country"/>
 </Segment>

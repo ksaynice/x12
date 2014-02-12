@@ -46,18 +46,43 @@
             <Loop name="LMENCHINFO" max="inf" comment="Merchandise information multiple occurrences">
               <Segment name="LIN" max="1" required="y" comment="Item identification"/>
               <Segment name="CTP" max="1" required="y" comment="Unit pricing"/>
+              <Segment name="SAC" max="1" required="n" comment="Service, Promotion, Allowance"/>
               <Segment name="N9"  max="1" required="y" comment="UDT information"/>
               <Segment name="AMT" max="1" required="y" comment="Extenden pricing"/>
-              <Segment name="SAC" max="1" required="y" comment="Discount"/>
-              <Segment name="DTM" max="1" required="y" comment="Date"/>
+              <Segment name="DTM" max="1" required="n" comment="Date"/>
             </Loop>
 
-          <Segment name="CTT" max="1" required="y" comment="Transaction totals"/>
+          <Segment name="CTT" max="1" required="n" comment="Transaction totals"/>
           <Segment name="SE" max="1" required="y" comment="Transaction Footer"/>
-
         </Loop>
-        <Segment name="ST" max="1" required="y" comment="Store totals block header"/>
-        <Segment name="SE" max="1" required="y" comment="Store totals block footer"/>
+
+        <Segment name="ST"  max="1" required="y" comment="Store totals block header"/>
+        <Segment name="XQ"  max="1" required="y" comment="Date"/>
+        <Segment name="LIN" max="1" required="y" comment="Dummy Line"/>
+        <Loop name="LAMTGW" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total merchandise sales"/>
+        </Loop>
+        <Loop name="LAMTGX" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total merchandise returns"/>
+        </Loop>
+        <Loop name="LAMTGTS" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total tax"/>
+        </Loop>
+        <Loop name="LAMTECS" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total shipping"/>
+        </Loop>
+        <Loop name="LAMTBAP" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total tenders"/>
+        </Loop>
+        <Loop name="LAMTTCS" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total non-commiss sales"/>
+        </Loop>
+        <Loop name="LAMTECU" max="1" comment="Store totals">
+          <Segment name="AMT" max="1" required="y" comment="total actual transactions sales"/>
+        </Loop>
+
+
+        <Segment name="SE"  max="1" required="y" comment="Store totals block footer"/>
       <Segment name="GE" max="1" required="y"/>
   	<Segment name="IEA" max="1" required="y"/>
   </Loop>

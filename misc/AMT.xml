@@ -2,8 +2,8 @@
    This file is part of the X12Parser library that provides tools to
    manipulate X12 messages using Ruby native syntax.
 
-   http://x12parser.rubyforge.org 
-   
+   http://x12parser.rubyforge.org
+
    Copyright (C) 2009 APP Design, Inc.
 
    This library is free software; you can redistribute it and/or
@@ -26,5 +26,5 @@
 <Segment name="AMT" comment="To indicate the total monetary amount">
   <Field name="AmountQualifierCode" min="1" max="3" validation="T522" comment="Code to qualify amount"/>
   <Field name="MonetaryAmount" type="double" min="1" max="18" comment="Monetary amount"/>
-  <Field name="CreditDebitFlagCode" required="y" min="1" max="1" validation="T478" comment="Code indicating whether amount is a credit or debit"/>
+  <Field name="CreditDebitFlagCode" required="n" min="1" max="1" validation="T478" comment="Code indicating whether amount is a credit or debit"/>
 </Segment>

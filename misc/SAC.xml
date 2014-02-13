@@ -26,9 +26,9 @@
 <Segment name="SAC" comment="To request or identify a service, promotion, allowance, or charge; to specify the amount or percentage for the service, promotion, allowance, or charge">
   <Field name="AllowanceOrChargeIndicator" min="1" max="1" validation="T248" comment="Code which indicates an allowance or charge for the service specified"/>
   <Field name="ServicePromotionAllowanceOrChargeCode" required="n" min="4" max="4" validation="T1300" comment="Code identifying the service, promotion, allowance, or charge"/>
-  <Field name="AgencyQualifierCode" required="y" min="2" max="2" validation="T559" comment="Code identifying the agency assigning the code values"/>
-  <Field name="AgencyServicePromotionAllowanceOrChargeCode" required="y" min="1" max="10" comment="Agency maintained code identifying the service, promotion, allowance, or charge"/>
-  <Field name="Amount" type="double" required="y" min="1" max="15" comment="Monetary amount"/>
+  <Field name="AgencyQualifierCode" required="n" min="2" max="2" validation="T559" comment="Code identifying the agency assigning the code values"/>
+  <Field name="AgencyServicePromotionAllowanceOrChargeCode" required="n" min="1" max="10" comment="Agency maintained code identifying the service, promotion, allowance, or charge"/>
+  <Field name="Amount" type="double" required="n" min="1" max="15" comment="Monetary amount"/>
   <Field name="AllowanceChargePercentQualifier" required="n" min="1" max="1" validation="T378" comment="Code indicating on what basis allowance or charge percent is calculated"/>
   <Field name="Percent" type="double" required="n" min="1" max="6" comment="Percent expressed as a percent"/>
   <Field name="Rate" type="double" required="n" min="1" max="9" comment="Rate expressed in the standard monetary denomination for the currency specified"/>

@@ -29,8 +29,22 @@
           <Segment name="ST" min="1" max="1" required="y" comment="Transaction header"/>
             <Segment name="XQ" min="1" max="1" required="y" comment="Date, Transaction#"/>
             <Segment name="XPO" min="1" max="1" required="y" comment="Web order#"/>
-            <Loop name="LTENDER" max="inf" comment="Tender multiple occurrence">
-              <Segment name="N9*AFK" max="1" required="y" comment="Tender"/>
+            <Loop name="LTENDER" max="1" comment="Tender multiple occurrence">
+              <Loop name="LN91" max="1" comment="Store totals">
+                <Segment name="N9" max="1" required="y" comment="Tender"/>
+              </Loop>
+              <Loop name="LN92" max="1" comment="Store totals">
+                <Segment name="N9" max="1" required="y" comment="Tender"/>
+              </Loop>
+              <Loop name="LN93" max="1" comment="Store totals">
+                <Segment name="N9" max="1" required="y" comment="Tender"/>
+              </Loop>
+              <Loop name="LN94" max="1" comment="Store totals">
+                <Segment name="N9" max="1" required="y" comment="Tender"/>
+              </Loop>
+              <Loop name="LN95" max="1" comment="Store totals">
+                <Segment name="N9" max="1" required="y" comment="Tender"/>
+              </Loop>
             </Loop>
             <Loop name="LTAX" max="1" comment="Tender multiple occurrence">
               <Segment name="N9" max="1" required="y" comment="Tender"/>

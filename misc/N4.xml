@@ -2,8 +2,8 @@
    This file is part of the X12Parser library that provides tools to
    manipulate X12 messages using Ruby native syntax.
 
-   http://x12parser.rubyforge.org 
-   
+   http://x12parser.rubyforge.org
+
    Copyright (C) 2009 APP Design, Inc.
 
    This library is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@
 -->
 
 <Segment name="N4" comment="To specify the geographic place of the named party">
-  <Field name="CityName" required="y" min="2" max="30" comment="Free-form text for city name"/>
+  <Field name="CityName" required="n" min="2" max="30" comment="Free-form text for city name"/>
   <Field name="StateOrProvinceCode" min="2" max="2" comment="Code (Standard State/Province) as defined by appropriate government agency"/>
   <Field name="PostalCode" min="3" max="15" comment="Code defining international postal zone code excluding punctuation and blanks (zip code for United States)"/>
   <Field name="CountryCode" min="2" max="3" comment="Code identifying the country"/>

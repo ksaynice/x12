@@ -57,7 +57,7 @@
               <Segment name="N1"  max="1" required="y" comment="Web customer name"/>
             </Loop>
             <Segment name="N3"  max="1" required="n" comment="Web customer street addr"/>
-            <Segment name="N4"  max="1" required="y" comment="Web customer city addr"/>
+            <Segment name="N4"  max="1" required="n" comment="Web customer city addr"/>
             <Segment name="TD5" max="1" required="y" comment="Shipping amount"/>
             <Segment name="DTM" max="1" required="y" comment="Transaction date,time"/>
             <Segment name="N9"  max="1" required="y" comment="Shipto name, addr"/>

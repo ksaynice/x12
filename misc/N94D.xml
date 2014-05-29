@@ -23,7 +23,7 @@
    $Id: N9.xml 78 2009-05-12 22:27:26Z ikk $
 -->
 
-<Segment name="N9" comment="To transmit identifying information as specified by the Reference Identification Qualifier">
+<Segment name="N94D" comment="To transmit identifying information as specified by the Reference Identification Qualifier">
   <Field name="ReferenceIdentificationQualifier" min="2" max="3" validation="T128" comment="Code qualifying the Reference Identification"/>
   <Field name="ReferenceIdentification" required="n" min="1" max="50" comment="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"/>
   <Field name="FreeFormDescription" required="n" min="1" max="45" comment="Free-form descriptive text"/>

@@ -26,7 +26,7 @@
 <Segment name="N9" comment="To transmit identifying information as specified by the Reference Identification Qualifier">
   <Field name="ReferenceIdentificationQualifier" min="2" max="3" validation="T128" comment="Code qualifying the Reference Identification"/>
   <Field name="ReferenceIdentification" required="n" min="1" max="50" comment="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"/>
-  <Field name="FreeFormDescription" required="n" min="1" max="45" comment="Free-form descriptive text"/>
+  <Field name="FreeFormDescription" required="n" min="1" max="90" comment="Free-form descriptive text"/>
   <Field name="Date" required="n" min="8" max="8" comment="Date expressed as CCYYMMDD where CC represents the first two digits of the calendar year"/>
   <Field name="Time" required="n" min="4" max="8" comment="Time expressed in 24-hour clock time as follows: HHMM, or HHMMSS, or HHMMSSD, or HHMMSSDD, where H = hours (00-23), M = minutes (00-59), S = integer seconds (00-59) and DD = decimal seconds; decimal seconds are expressed as follows: D = tenths (0-9) and DD = hundredths (00-99)"/>
   <Field name="TimeCode" required="n" min="2" max="2" validation="T623" comment="Code identifying the time. In accordance with International Standards Organization standard 8601, time can be specified by a + or - and an indication in hours in relation to Universal Time Coordinate (UTC) time; since + is a restricted character, + and - are substituted by P and M in the codes that follow"/>

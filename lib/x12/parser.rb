@@ -2,8 +2,8 @@
 #     This file is part of the X12Parser library that provides tools to
 #     manipulate X12 messages using Ruby native syntax.
 #
-#     http://x12parser.rubyforge.org 
-#     
+#     http://x12parser.rubyforge.org
+#
 #     Copyright (C) 2008 APP Design, Inc.
 #
 #     This library is free software; you can redistribute it and/or
@@ -34,7 +34,7 @@ module X12
   class Parser
 
     # These constitute prohibited file names under Microsoft
-    MS_DEVICES = [   
+    MS_DEVICES = [
                   'CON',
                   'PRN',
                   'AUX',
@@ -59,8 +59,9 @@ module X12
       if MS_DEVICES.find{|i| i == base_name}
         file_name = File.join(File.dirname, "#{base_name}_.xml")
       end
-      file_location = File.join(File.dirname(__FILE__), "../../misc", file_name) 
-      
+      file_location = File.join(File.dirname(__FILE__), "../../misc", file_name)
+      file_location = Pathname.new(file_location).cleanpath
+
       # Read and parse the definition
       str = File.open(file_location, 'r').read
       #@dir_name = File.dirname(File.expand_path(file_name)) # to look up other files if needed
@@ -77,7 +78,7 @@ module X12
         @x12_definition.keys.each{|t|
           save_definition[t] ||= {}
           @x12_definition[t].keys.each{|u|
-            save_definition[t][u] = @x12_definition[t][u] 
+            save_definition[t][u] = @x12_definition[t][u]
           }
           @x12_definition = save_definition
         }
@@ -130,7 +131,7 @@ module X12
         segment_definition = @x12_definition[X12::Segment][segment.name]
       end
       segment_definition.nodes.each_index{|i|
-        segment.nodes[i] = segment_definition.nodes[i] 
+        segment.nodes[i] = segment_definition.nodes[i]
         # Make sure we have the validation table if any for this field. Try to read one in if missing.
         table = segment.nodes[i].validation
         if table
